@@ -1,0 +1,92 @@
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.login-card {
+  width: min(420px, 100%);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 32px 28px;
+  box-shadow: 0 16px 40px rgba(31, 41, 55, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+.login-title {
+  text-align: center;
+  margin: 0 0 24px;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  color: #111827;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  input {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #111827;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      border-color: var(--ig-pink);
+      box-shadow: 0 0 0 4px rgba(221, 42, 123, 0.14);
+    }
+  }
+}
+
+.login-btn {
+  margin-top: 6px;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--ig-orange), var(--ig-pink) 50%, var(--ig-purple));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(221, 42, 123, 0.28);
+  }
+}
+
+.register-option {
+  margin: 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.register-link {
+  a {
+    color: var(--ig-pink);
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

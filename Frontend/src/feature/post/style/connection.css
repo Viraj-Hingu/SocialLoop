@@ -1,0 +1,85 @@
+.connections-page {
+  max-width: 600px;
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.connections-section {
+  background-color: var(--surface);
+  border-radius: 12px;
+}
+
+.connections-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  gap: 12px;
+}
+
+.user-item__info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.user-item__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-item__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-item__username {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.user-item__name {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.user-item__btn {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.user-item__btn--primary {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.user-item__btn--secondary {
+  background-color: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.user-item__btn--danger {
+  background-color: var(--surface-hover);
+  color: var(--danger);
+}
+
+.user-item__btn:hover {
+  opacity: 0.9;
+}

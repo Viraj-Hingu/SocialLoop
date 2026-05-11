@@ -1,0 +1,147 @@
+.create-post {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: var(--surface-hover);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-post__header {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.create-post__header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.create-post__header-btn {
+  position: absolute;
+  right: 12px;
+  color: var(--primary-blue);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.create-post__back-btn {
+  position: absolute;
+  left: 12px;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.create-post__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+.create-post__upload-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.create-post__upload-area svg {
+  font-size: 60px;
+  color: var(--text-primary);
+}
+
+.create-post__upload-area p {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.create-post__file-input {
+  display: none;
+}
+
+.create-post__preview-container {
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+}
+
+.create-post__image-preview {
+  flex: 1.5;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.create-post__image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.create-post__details {
+  flex: 1;
+  padding: 16px;
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.create-post__user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.create-post__user-info img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.create-post__user-info span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.create-post__caption-input {
+  width: 100%;
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 16px;
+  resize: none;
+}
+
+.create-post__caption-input:focus {
+  outline: none;
+}
+
+.create-post__submit-btn {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.create-post__submit-btn:disabled {
+  opacity: 0.5;
+}
