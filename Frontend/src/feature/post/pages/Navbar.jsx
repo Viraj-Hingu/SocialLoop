@@ -11,7 +11,7 @@ const Navbar = () => {
       <nav className="top-nav">
         <NavLink to="/homepage" className="brand">
           <span className="brand__dot" />
-          <span>InstaByMe</span>
+          <span>SocialLoop</span>
         </NavLink>
 
         <div className="top-nav__links">

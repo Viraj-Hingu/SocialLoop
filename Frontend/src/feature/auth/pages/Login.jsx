@@ -9,7 +9,7 @@ const AuthFooter = () => (
     <a href="#">Help</a>
     <a href="#">Privacy</a>
     <a href="#">Terms</a>
-    <div className="auth-copyright">© 2026 InstaByMe</div>
+    <div className="auth-copyright">© 2026 SocialLoop</div>
   </div>
 );
 
@@ -36,7 +36,7 @@ const Login = () => {
 
         <div className="auth-form-side">
           <div className="auth-card">
-            <h1 className="auth-logo">InstaByMe</h1>
+            <h1 className="auth-logo">SocialLoop</h1>
             
             <form className="auth-form" onSubmit={handleSubmit}>
               {authError && <p className="app-alert app-alert--error">{authError}</p>}

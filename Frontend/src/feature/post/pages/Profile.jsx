@@ -39,7 +39,7 @@ const Profile = () => {
           <div className="profile-header__bio">
             <span className="profile-header__full-name">{user?.username}</span>
             <p>Digital Creator</p>
-            <a href="#" className="profile-header__link">www.instabyme.com</a>
+            <a href="#" className="profile-header__link">www.socialloop.com</a>
           </div>
         </div>
       </header>

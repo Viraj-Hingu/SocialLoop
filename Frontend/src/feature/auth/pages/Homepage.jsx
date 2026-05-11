@@ -13,9 +13,9 @@ function Homepage() {
   return (
     <div className="auth-page">
       <div className="auth-container" style={{ flexDirection: 'column', textAlign: 'center' }}>
-        <h1 className="auth-logo" style={{ fontSize: '60px', marginBottom: '10px' }}>InstaByMe</h1>
+        <h1 className="auth-logo" style={{ fontSize: '60px', marginBottom: '10px' }}>SocialLoop</h1>
         <p style={{ fontSize: '20px', color: 'var(--text-secondary)', maxWidth: '500px', marginBottom: '40px' }}>
-          Capture and share the world's moments. InstaByMe is a fast, beautiful and fun way to share your life with friends and family.
+          Capture and share the world's moments. SocialLoop is a fast, beautiful and fun way to share your life with friends and family.
         </p>
         
         <div style={{ display: 'flex', gap: '16px' }}>

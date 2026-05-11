@@ -4,7 +4,7 @@ const likeModel = require("../model/like.model");
 
 const uploadPost = (req, res) => {
   cloudinary.uploader
-    .upload_stream({ folder: "instabyme" }, async (err, result) => {
+    .upload_stream({ folder: "socialloop" }, async (err, result) => {
       if (err) {
         return res.status(500).json({
           Messge: "Upload Failed",

@@ -29,7 +29,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__logo">
-        <h1 className="sidebar__logo-text">InstaByMe</h1>
+        <h1 className="sidebar__logo-text">SocialLoop</h1>
       </div>
 
       <nav className="sidebar__nav">
@@ -47,19 +47,57 @@ const Sidebar = () => {
           )}
         </NavLink>
 
+        <div className="sidebar__item">
+          <RiSearchLine />
+          <span className="sidebar__label">Search</span>
+        </div>
+
         <NavLink
-          to="/connection"
+          to="/explore"
           className={({ isActive }) =>
             `sidebar__item ${isActive ? "sidebar__item--active" : ""}`
           }
         >
           {({ isActive }) => (
             <>
-              {isActive ? <RiGroupFill /> : <RiGroupLine />}
-              <span className="sidebar__label">Connection</span>
+              {isActive ? <RiCompass3Fill /> : <RiCompass3Line />}
+              <span className="sidebar__label">Explore</span>
             </>
           )}
         </NavLink>
+
+        <NavLink
+          to="/reels"
+          className={({ isActive }) =>
+            `sidebar__item ${isActive ? "sidebar__item--active" : ""}`
+          }
+        >
+          {({ isActive }) => (
+            <>
+              {isActive ? <RiVideoFill /> : <RiVideoLine />}
+              <span className="sidebar__label">Reels</span>
+            </>
+          )}
+        </NavLink>
+
+        <NavLink
+          to="/messages"
+          className={({ isActive }) =>
+            `sidebar__item ${isActive ? "sidebar__item--active" : ""}`
+          }
+        >
+          {({ isActive }) => (
+            <>
+              {isActive ? <RiMessengerFill /> : <RiMessengerLine />}
+              <span className="sidebar__label">Messages</span>
+            </>
+          )}
+        </NavLink>
+
+        <div className="sidebar__item">
+          <RiHeartLine />
+          <span className="sidebar__label">Notifications</span>
+        </div>
 
         <NavLink
           to="/createpost"
@@ -89,6 +127,13 @@ const Sidebar = () => {
           )}
         </NavLink>
       </nav>
+
+      <div className="sidebar__footer">
+        <div className="sidebar__item">
+          <RiMenuLine />
+          <span className="sidebar__label">More</span>
+        </div>
+      </div>
     </div>
   );
 };

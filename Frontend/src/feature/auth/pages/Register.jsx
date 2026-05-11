@@ -29,7 +29,7 @@ const Register = () => {
 
         <div className="auth-form-side">
           <div className="auth-card">
-            <h1 className="auth-logo">InstaByMe</h1>
+            <h1 className="auth-logo">SocialLoop</h1>
             <p className="auth-subtitle">
               Sign up to see photos and videos from your friends.
             </p>
