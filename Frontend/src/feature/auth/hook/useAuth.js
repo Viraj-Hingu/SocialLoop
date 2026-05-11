@@ -45,5 +45,5 @@ export function useAuth() {
     }
   };
 
-  return { handleLogin, loading, user, handleRegister, authError, clearAuthError };
+  return { handleLogin, loading, user, handleRegister, authError, setauthError, clearAuthError };
 }

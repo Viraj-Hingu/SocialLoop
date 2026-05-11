@@ -7,7 +7,7 @@ const uploadPost = (req, res) => {
     .upload_stream({ folder: "socialloop" }, async (err, result) => {
       if (err) {
         return res.status(500).json({
-          Messge: "Upload Failed",
+          message: "Upload Failed",
         });
       }
 
@@ -17,7 +17,7 @@ const uploadPost = (req, res) => {
         image_url: result.secure_url,
       });
       res.status(200).json({
-        Messge: "Uploaded...",
+        message: "Uploaded...",
         post,
       });
     })
@@ -29,7 +29,7 @@ const getMyPost = async (req, res) => {
 
   if (!userID) {
     res.status(401).json({
-      Messge: "user not found",
+      message: "user not found",
     });
   }
 
@@ -48,7 +48,7 @@ const getMyPost = async (req, res) => {
   );
 
   res.status(200).json({
-    Messge: "Post Found",
+    message: "Post Found",
     userID,
     post,
   });
@@ -118,18 +118,18 @@ const unLikePost = async (req, res) => {
 
     if (!findLike) {
       return res.status(400).json({
-        Messge: "Post is not Liked",
+        message: "Post is not Liked",
       });
     }
     const like = await likeModel.findByIdAndDelete(findLike._id);
 
     return res.status(200).json({
-      Messge: "Post get unliked",
+      message: "Post get unliked",
       like,
     });
   } catch (error) {
     res.status(400).json({
-      Messge: "Error While unlike",
+      message: "Error While unlike",
     });
   }
 };

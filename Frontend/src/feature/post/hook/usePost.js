@@ -173,6 +173,7 @@ export const usePost = () => {
     handleUpload,
     images,
     postError,
+    setpostError,
     clearPostError,
   };
 };

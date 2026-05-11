@@ -7,13 +7,24 @@ import { useAuth } from "../hook/useAuth";
 
 const Register = () => {
   const navigate = useNavigate();
-  const { handleRegister, loading, authError, clearAuthError } = useAuth();
+  const { handleRegister, loading, authError, setauthError, clearAuthError } = useAuth();
   const [username, setusername] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Frontend validation
+    if (username.length < 3) {
+      setauthError("Username must be at least 3 characters long");
+      return;
+    }
+    if (password.length < 6) {
+      setauthError("Password must be at least 6 characters long");
+      return;
+    }
+
     const redirect = await handleRegister(username, email, password);
     if (redirect) {
       navigate("/login");

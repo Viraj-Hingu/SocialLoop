@@ -5,7 +5,7 @@ import { useAuth } from "../../auth/hook/useAuth";
 import { RiImageAddLine } from "react-icons/ri";
 
 const CreatePost = () => {
-  const { handleUpload, loading, postError, clearPostError } = usePost();
+  const { handleUpload, loading, postError, setpostError, clearPostError } = usePost();
   const { user } = useAuth();
   const [caption, setcaption] = useState("");
   const [preview, setpreview] = useState("");
@@ -32,9 +32,27 @@ const CreatePost = () => {
       setFile(null);
       return;
     }
+
+    // Validation
+    if (!selectedFile.type.startsWith("image/")) {
+      handleUploadError("Please select an image file (jpg, png, etc.)");
+      e.target.value = "";
+      return;
+    }
+
+    if (selectedFile.size > 5 * 1024 * 1024) {
+      handleUploadError("Image size should be less than 5MB");
+      e.target.value = "";
+      return;
+    }
+
     clearPostError();
     setFile(selectedFile);
     setpreview(URL.createObjectURL(selectedFile));
+  };
+
+  const handleUploadError = (msg) => {
+    setpostError(msg);
   };
 
   const triggerFileInput = () => {
