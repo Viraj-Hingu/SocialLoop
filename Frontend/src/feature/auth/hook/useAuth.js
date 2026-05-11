@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { authConext } from "../context/auth.context";
-import { loginApi, RegisterApi } from "../service/auth.api";
+import { loginApi, RegisterApi, logoutApi } from "../service/auth.api";
 
 export function useAuth() {
   const context = useContext(authConext);
@@ -44,6 +44,19 @@ export function useAuth() {
       setloading(false);
     }
   };
+  const handleLogout = async () => {
+    try {
+      setloading(true);
+      await logoutApi();
+      setuser(null);
+      return true;
+    } catch (error) {
+      setauthError(extractErrorMessage(error, "Unable to logout"));
+      return false;
+    } finally {
+      setloading(false);
+    }
+  };
 
-  return { handleLogin, loading, user, handleRegister, authError, setauthError, clearAuthError };
+  return { handleLogin, loading, user, handleRegister, handleLogout, authError, setauthError, clearAuthError };
 }

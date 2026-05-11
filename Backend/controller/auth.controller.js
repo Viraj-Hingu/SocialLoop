@@ -134,4 +134,18 @@ const handleLogin = async (req, res) => {
     });
   }
 };
-module.exports = { handleRegister, handleLogin };
+const handleLogout = async (req, res) => {
+  try {
+    res.clearCookie("Token", getCookieOptions());
+    return res.status(200).json({
+      message: "Logged out successfully",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Unable to logout",
+      error: error.message,
+    });
+  }
+};
+
+module.exports = { handleRegister, handleLogin, handleLogout };

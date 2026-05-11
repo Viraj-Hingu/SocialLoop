@@ -8,6 +8,7 @@ import {
   showFeed,
   showFollower,
   showFollowing,
+  showMyPost,
   showSuggetion,
   unfollow,
   unLikePost,
@@ -76,6 +77,18 @@ export const usePost = () => {
     }
   };
 
+  const handleMyPosts = async () => {
+    try {
+      setloading(true);
+      clearPostError();
+      const data = await showMyPost();
+      setimages(data.post);
+    } catch (error) {
+      setpostError(extractErrorMessage(error, "Unable to load your posts"));
+    } finally {
+      setloading(false);
+    }
+  };
   const handleFeed = async () => {
     try {
       setloading(true);
@@ -171,6 +184,7 @@ export const usePost = () => {
     handleFollow,
     handleunFollow,
     handleUpload,
+    handleMyPosts,
     images,
     postError,
     setpostError,

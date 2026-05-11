@@ -11,6 +11,11 @@ export const showFeed = async () => {
   return (await response).data;
 };
 
+export const showMyPost = async () => {
+  const response = api.get("/api/post/mypost");
+  return (await response).data;
+};
+
 export const likePost = async (postID) => {
   const response = api.post("/api/post/like/" + postID);
   return (await response).data;

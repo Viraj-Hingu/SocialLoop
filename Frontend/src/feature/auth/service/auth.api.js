@@ -22,3 +22,8 @@ export const RegisterApi = async (username, email, password) => {
   });
   return response.data;
 };
+
+export const logoutApi = async () => {
+  const response = await api.post("/api/auth/logout");
+  return response.data;
+};

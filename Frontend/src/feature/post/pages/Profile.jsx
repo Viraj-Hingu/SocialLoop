@@ -6,15 +6,14 @@ import { RiSettings3Line, RiGridFill, RiVideoLine, RiPriceTag3Line } from "react
 
 const Profile = () => {
   const { user } = useAuth();
-  const { feed, handleFeed } = usePost();
+  const { images, handleMyPosts } = usePost();
   const [activeTab, setActiveTab] = useState("posts");
 
   useEffect(() => {
-    handleFeed();
+    handleMyPosts();
   }, []);
 
-  // Filter posts for current user (this is a mock filter, backend should provide user-specific posts)
-  const userPosts = feed.filter(post => post.user?._id === user?._id);
+  const userPosts = images;
 
   return (
     <div className="profile-page">

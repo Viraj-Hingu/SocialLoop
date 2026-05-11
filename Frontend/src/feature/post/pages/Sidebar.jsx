@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   RiHome5Line,
   RiHome5Fill,
@@ -19,12 +19,21 @@ import {
   RiMenuLine,
   RiGroupLine,
   RiGroupFill,
+  RiLogoutBoxLine,
 } from "react-icons/ri";
 import { useAuth } from "../../auth/hook/useAuth";
 import "./Sidebar.css";
 
 const Sidebar = () => {
-  const { user } = useAuth();
+  const navigate = useNavigate();
+  const { user, handleLogout } = useAuth();
+
+  const onLogout = async () => {
+    const success = await handleLogout();
+    if (success) {
+      navigate("/login");
+    }
+  };
 
   return (
     <div className="sidebar">
@@ -47,57 +56,19 @@ const Sidebar = () => {
           )}
         </NavLink>
 
-        <div className="sidebar__item">
-          <RiSearchLine />
-          <span className="sidebar__label">Search</span>
-        </div>
-
         <NavLink
-          to="/explore"
+          to="/connection"
           className={({ isActive }) =>
             `sidebar__item ${isActive ? "sidebar__item--active" : ""}`
           }
         >
           {({ isActive }) => (
             <>
-              {isActive ? <RiCompass3Fill /> : <RiCompass3Line />}
-              <span className="sidebar__label">Explore</span>
+              {isActive ? <RiGroupFill /> : <RiGroupLine />}
+              <span className="sidebar__label">Connection</span>
             </>
           )}
         </NavLink>
-
-        <NavLink
-          to="/reels"
-          className={({ isActive }) =>
-            `sidebar__item ${isActive ? "sidebar__item--active" : ""}`
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive ? <RiVideoFill /> : <RiVideoLine />}
-              <span className="sidebar__label">Reels</span>
-            </>
-          )}
-        </NavLink>
-
-        <NavLink
-          to="/messages"
-          className={({ isActive }) =>
-            `sidebar__item ${isActive ? "sidebar__item--active" : ""}`
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive ? <RiMessengerFill /> : <RiMessengerLine />}
-              <span className="sidebar__label">Messages</span>
-            </>
-          )}
-        </NavLink>
-
-        <div className="sidebar__item">
-          <RiHeartLine />
-          <span className="sidebar__label">Notifications</span>
-        </div>
 
         <NavLink
           to="/createpost"
@@ -129,9 +100,9 @@ const Sidebar = () => {
       </nav>
 
       <div className="sidebar__footer">
-        <div className="sidebar__item">
-          <RiMenuLine />
-          <span className="sidebar__label">More</span>
+        <div className="sidebar__item" onClick={onLogout} style={{ cursor: 'pointer' }}>
+          <RiLogoutBoxLine />
+          <span className="sidebar__label">Logout</span>
         </div>
       </div>
     </div>

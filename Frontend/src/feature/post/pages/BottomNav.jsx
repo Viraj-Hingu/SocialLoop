@@ -11,6 +11,8 @@ import {
   RiVideoFill,
   RiUser3Line,
   RiUser3Fill,
+  RiGroupLine,
+  RiGroupFill,
 } from "react-icons/ri";
 import "./BottomNav.css";
 
@@ -27,12 +29,12 @@ const BottomNav = () => {
       </NavLink>
 
       <NavLink
-        to="/explore"
+        to="/connection"
         className={({ isActive }) =>
           `bottom-nav__item ${isActive ? "bottom-nav__item--active" : ""}`
         }
       >
-        {({ isActive }) => (isActive ? <RiCompass3Fill /> : <RiCompass3Line />)}
+        {({ isActive }) => (isActive ? <RiGroupFill /> : <RiGroupLine />)}
       </NavLink>
 
       <NavLink
@@ -44,14 +46,7 @@ const BottomNav = () => {
         {({ isActive }) => (isActive ? <RiAddBoxFill /> : <RiAddBoxLine />)}
       </NavLink>
 
-      <NavLink
-        to="/reels"
-        className={({ isActive }) =>
-          `bottom-nav__item ${isActive ? "bottom-nav__item--active" : ""}`
-        }
-      >
-        {({ isActive }) => (isActive ? <RiVideoFill /> : <RiVideoLine />)}
-      </NavLink>
+
 
       <NavLink
         to="/profile"
